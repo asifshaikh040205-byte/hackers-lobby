@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Navigate sample app</title>
+ </head>
+ <body>
+  This is my other page
+  <hr>
+  <button id="index-page-link">Go to index.html</button>
+  
+  <script>
+   document.getElementById('index-page-link').addEventListener('click', function () {
+     dhc.app.navigate({
+       url: 'file:///index.html'
+     }).then((result) => {
+       if (result) {
+         alert('Ok!');
+       } else {
+         alert('Fail!');
+       }
+     },
+     (error) => {
+       alert('An error occur while navigate the the URL: ' + error);
+     });
+   });
+  </script>
+ </body>
+</html>
