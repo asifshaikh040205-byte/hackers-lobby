@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Files sample app</title>
+  <style>
+   div {
+     line-height: 3em;
+   }
+   button {
+     margin-right: 10px;
+   }
+  </style>
+ </head>
+ <body>
+  <div>
+   <textarea id="input-textarea" cols="100" rows="10">Type here the text to be write. You can see also in this textarea the contents of the files that you read using the below buttons.</textarea>
+  </div>
+  <div>
+   <button id="write-file-in-root-button">Write file in the app root directory</button>
+   <button id="write-file-in-subfolder-button">Write file in a root "my_subfolder" directory</button>
+  </div>
+  <div>
+   <button id="read-file-in-root-button">Read file in the app root directory</button>
+   <button id="read-file-in-subfolder-button">Read file in a root in "my_subfolder" directory</button>
+  </div>
+  <div>
+   <button id="delete-file-in-root-button">Delete file in the app root directory</button>
+   <button id="delete-file-in-subfolder-button">Delete file in a root "my_subfolder" directory</button>
+  </div>
+  <div>
+   <button id="create-dir-button">Create "my_subfolder" directory</button>
+   <button id="exist-dir-button">"my_subfolder" directory exist</button>
+  </div>
+  <div>
+   <button id="list-files-all-dirs-button">List the "my_subfolder" files (all folders).</button>
+   <button id="list-files-top-dir-button">List the "my_subfolder" files (top folder).</button>
+  </div>
+  <div>
+   <textarea id="list-files-textarea" cols="100" rows="10"></textarea>
+  </div>
+  <div>
+   <button id="delete-dir-button">Remove the app root "my_subfolder" directory (recursively)</button>
+  </div>
+  <div>
+   <button id="open-text-file-button">Open a text file using the File Open dialog</button>
+  </div>
+  <div>
+   <button id="save-text-file-button">Save to a text file using the File Save dialog</button>
+  </div>
+  <div>
+   <button id="get-temp-dir-button">Get the directory path for temporal files</button>
+  </div>
+  <div>
+   <button id="get-user-desktop-dir-button">Get the user's desktop directory path</button>
+  </div>
+  <div>
+   <button id="get-user-documents-dir-button">Get the user's documents directory path</button>
+  </div>
+  <div>
+   <button id="get-app-data-dir-button">Get the app data directory path</button>
+  </div>
+  <div>
+   <button id="select-folder-path-button">Let the user to choose a folder path</button>
+  </div>
+
+  <script src="scripts/jquery.min.js"></script>
+  <script src="scripts/app.js"></script>
+ </body>
+</html>
