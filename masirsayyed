@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+// Step 1: Create a user-defined exception
+class InvalidNameException extends Exception {
+    public InvalidNameException(String message) {
+        super(message);
+    }
+}
+
+public class EmployeeNameValidator {
+
+    // Step 2: Method to validate employee name
+    public static void validateName(String name) throws InvalidNameException {
+        // Check if name is empty or contains non-letter characters
+        if (name == null || name.isEmpty() || !name.matches("[a-zA-Z ]+")) {
+            throw new InvalidNameException("Employee name is invalid!");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Employee Name: ");
+        String empName = sc.nextLine();
+
+        try {
+            // Validate the name
+            validateName(empName);
+            System.out.println("Employee Name is valid: " + empName);
+        } catch (InvalidNameException e) {
+            // Catch and display the exception message
+            System.out.println(e.getMessage());
+        } finally {
+            sc.close();
+        }
+    }
+}
