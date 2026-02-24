@@ -1,0 +1,35 @@
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</head>
+
+    <body>
+        <input type="text" id="user" />
+        <input type="text" id="password" />
+        <input type="button" id="submit" value="submit" />
+    </body>
+    <script>
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                var user = document.getElementById("user").value;
+                var password = document.getElementById("password").value;
+                console.log("user", user)
+                $.post("/login",
+                    {
+                        user: user,
+                        password: password
+                    }).done(function (response) {
+                        console.log("res", response)
+                        if (response.result == "true") 
+                        {
+                            alert(response.msg)
+                            window.location.href="/dashboard"
+                        }
+                        else 
+                        {
+                            alert("Error")
+                        }
+                    });
+            });
+        });</script></html>
