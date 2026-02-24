@@ -1,0 +1,51 @@
+<html>
+<head>
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+</head>
+<body>
+    <input type="text" id="fname" placeholder="Type something...">    
+      <input type="text" id="lname" placeholder="Type something...">
+      <input type="text" id="email" placeholder="Type something...">
+      <input type="password" id="password" placeholder="Type something...">
+
+      <input type="button" id="save" value="Save"/>
+    <!-- <input type="button" id="myButton" value="Click Me"> -->
+<script>
+    $(document).ready(function(){
+        $("#myButton").click(function(){
+           console.log("First Name: " + firstName);
+           $.post("#ssubmit").click(function(){
+           
+           var fname=document.getElementById("fname").value;
+           var lname=document.getElementById("lname").value;
+           console.log('First Name: ' + fname);
+           $.post("/submit", { fname: fname, lname: lname }, function(data,status) {
+               console.log(data);     
+           });
+        }); 
+    });
+        $("#save").click(function(){
+            alert("save button is calling");
+            var fname=document.getElementById("fname").value;
+            var lname=document.getElementById("lname").value;
+            var email=document.getElementById("email").value;
+            var password=document.getElementById("password").value;
+        
+           $.post("/save",
+                {
+                    fname:fname,
+                    lname:lname,
+                    email:email,
+                    password:password
+                },function(data,result){
+                        console.log(data);
+                        console.log(result);
+                })
+        
+            
+        })
+    });
+
+</script>
+</body>
+</html>
